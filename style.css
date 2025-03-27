@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #e9ecef;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #4a90e2, #50e3c2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+  color: #f0f0f0;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Dark color for mailto links */
+a[href^="mailto:"] {
+  color: #333; /* Adjust to desired dark color */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700;
+}
+
+/* Main Content */
+main {
+  padding: 40px 20px;
+}
+
+/* Card Layout */
+.card {
+  background: #fff;
+  margin: 30px auto;
+  padding: 20px 30px;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4a90e2;
+  padding-bottom: 5px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #4a90e2;
+}
+
+.card ul {
+  margin-left: 20px;
+  list-style-type: disc;
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+/* About Section: Image + Text */
+.about-container {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: center;
+  gap: 20px;       
+}
+
+.profile-pic {
+  width: 200px;      
+  border-radius: 50%;
+  object-fit: cover; 
+}
+
+
+/*footer {
+  text-align: center;
+  padding: 15px 0;
+  background: #333;
+  color: #fff;
+  margin-top: 40px;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
