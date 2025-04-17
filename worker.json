@@ -1,0 +1,11 @@
+{
+  "name": "guestbook-worker",
+  "main": "worker/worker.js",
+  "compatibility_date": "2025-04-16",
+  "kv_namespaces": [
+    {
+      "binding": "KV_GUESTBOOK",
+      "id": "<your-kv-namespace-id>"
+    }
+  ]
+}
