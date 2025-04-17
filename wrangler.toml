@@ -1,0 +1,11 @@
+# Guestbook Application
+# Author: Edwin Berrouet
+# Date: 04/16/2025
+
+name = "guestbook-worker"
+compatibility_date = "2025-04-16"
+main = "worker/worker.js"
+
+[[kv_namespaces]]
+binding = "KV_GUESTBOOK"
+id = "<your-kv-namespace-id>"
