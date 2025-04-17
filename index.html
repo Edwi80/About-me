@@ -130,16 +130,49 @@
     </section>
 
     
-    <section id="contact" class="card">
-      <h2>Contact Information</h2>
-      <p>Email: <a href="mailto:emanberrouet@gmail.com">emanberrouet@gmail.com</a></p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/edwin-berrouet" target="_blank">
-          linkedin.com/in/edwin-berrouet
-        </a>
-      </p>
+    <section id="guestbook" class="card">
+      <h2>Guestbook</h2>
+      <form id="commentForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <ul id="commentsList"></ul>
     </section>
+    
+    <script>
+    const apiURL = "https://<your-worker-subdomain>.workers.dev/api/comment"; // Update this!
+    
+    document.getElementById("commentForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+    
+      await fetch(apiURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, message })
+      });
+    
+      loadComments();
+      e.target.reset();
+    });
+    
+    async function loadComments() {
+      const res = await fetch(apiURL);
+      const comments = await res.json();
+      const list = document.getElementById("commentsList");
+      list.innerHTML = "";
+      comments.forEach(({ name, message }) => {
+        const li = document.createElement("li");
+        li.textContent = `${name}: ${message}`;
+        list.appendChild(li);
+      });
+    }
+    
+    loadComments();
+    </script>
+    
   </main>
 </body>
 </html>
